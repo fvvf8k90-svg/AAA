@@ -1,134 +1,101 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>INVEST PRO VIP</title>
+<title>Invest Pro</title>
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
-}
-
 body{
-background:#0b1020;
+margin:0;
+font-family:Arial;
+background:#0f172a;
 color:white;
+text-align:center;
 }
 
 header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px;
 background:#111827;
-border-bottom:1px solid #1f2937;
-}
-
-.logo{
-font-size:28px;
+padding:20px;
+font-size:32px;
 font-weight:bold;
-color:#22c55e;
-}
-
-.menu button{
-background:#22c55e;
-border:none;
-padding:10px 20px;
-border-radius:10px;
-color:white;
-font-size:16px;
 }
 
 .hero{
 padding:60px 20px;
-text-align:center;
 }
 
 .hero h1{
 font-size:42px;
-margin-bottom:20px;
 }
 
 .hero p{
 font-size:20px;
 color:#cbd5e1;
-margin-bottom:30px;
 }
 
-.start-btn{
-padding:15px 40px;
-font-size:22px;
+button{
+padding:15px 35px;
+font-size:18px;
 background:#22c55e;
 border:none;
-border-radius:15px;
+border-radius:10px;
 color:white;
+cursor:pointer;
+margin-top:20px;
 }
 
 .cards{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:25px;
-padding:40px 20px;
+gap:20px;
+padding:30px;
 }
 
 .card{
-background:#111827;
-width:300px;
-padding:30px;
-border-radius:20px;
-box-shadow:0 0 20px rgba(0,0,0,0.5);
+background:#1e293b;
+padding:25px;
+width:250px;
+border-radius:15px;
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
+transform:scale(1.05);
 }
 
 .card h2{
 color:#22c55e;
-margin-bottom:15px;
-}
-
-.card p{
-color:#d1d5db;
-line-height:1.7;
 }
 
 .stats{
-display:flex;
-justify-content:center;
-gap:30px;
 padding:40px;
-flex-wrap:wrap;
+background:#111827;
 }
 
-.box{
-background:#1e293b;
-padding:30px;
-width:220px;
-border-radius:20px;
-text-align:center;
-}
-
-.box h3{
-font-size:35px;
+.stat-number{
+font-size:40px;
 color:#22c55e;
-margin-bottom:10px;
+}
+
+.contact{
+padding:40px;
 }
 
 footer{
-margin-top:50px;
-padding:25px;
-text-align:center;
 background:#111827;
-color:#9ca3af;
+padding:20px;
+margin-top:30px;
+color:#94a3b8;
+}
+
+a{
+color:white;
+text-decoration:none;
 }
 
 </style>
@@ -137,91 +104,78 @@ color:#9ca3af;
 <body>
 
 <header>
-
-<div class="logo">
-INVEST PRO
-</div>
-
-<div class="menu">
-<button>تسجيل الدخول</button>
-</div>
-
+Invest Pro
 </header>
 
 <section class="hero">
 
-<h1>
-استثمر مثل المحترفين
-</h1>
+<h1>استثمر بأمان وحقق أرباحك</h1>
 
 <p>
-منصة VIP للاستثمار والأرباح اليومية الآمنة
+منصة استثمار حديثة وسريعة للمستثمرين
 </p>
 
-<button class="start-btn" onclick="startNow()">
+<button onclick="joinNow()">
 ابدأ الآن
 </button>
 
-<h2 id="msg" style="margin-top:25px;color:#22c55e;"></h2>
-
-</section>
-
-<section class="stats">
-
-<div class="box">
-<h3>$12M</h3>
-<p>إجمالي الاستثمارات</p>
-</div>
-
-<div class="box">
-<h3>25K</h3>
-<p>عدد المستثمرين</p>
-</div>
-
-<div class="box">
-<h3>98%</h3>
-<p>رضا العملاء</p>
-</div>
+<p id="msg"></p>
 
 </section>
 
 <section class="cards">
 
 <div class="card">
-<h2>استثمار سريع</h2>
-<p>
-حقق أرباح يومية بخطط مرنة وآمنة.
-</p>
+<h2>الخطة البرونزية</h2>
+<p>ربح يومي 5%</p>
 </div>
 
 <div class="card">
-<h2>حماية كاملة</h2>
-<p>
-تشفير وأمان عالي لجميع الحسابات.
-</p>
+<h2>الخطة الفضية</h2>
+<p>ربح يومي 10%</p>
 </div>
 
 <div class="card">
-<h2>دعم VIP</h2>
-<p>
-فريق دعم متواجد 24 ساعة لخدمتك.
-</p>
+<h2>الخطة الذهبية</h2>
+<p>ربح يومي 15%</p>
 </div>
 
 </section>
 
+<section class="stats">
+
+<h1>إحصائيات المنصة</h1>
+
+<div class="stat-number" id="users">
+1200
+</div>
+
+<p>مستخدم نشط</p>
+
+</section>
+
+<section class="contact">
+
+<h1>تواصل معنا</h1>
+
+<button>
+<a href="https://wa.me/0000000000">
+واتساب
+</a>
+</button>
+
+</section>
+
 <footer>
-
-© 2025 INVEST PRO VIP
-
+© 2025 Invest Pro
 </footer>
 
 <script>
 
-function startNow(){
+function joinNow(){
 
 document.getElementById("msg").innerHTML =
-"تم تحويلك إلى منصة VIP";
+"تم تسجيل الدخول بنجاح";
 
 }
 
