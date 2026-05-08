@@ -128,7 +128,180 @@ Watch Pro
 </div>
 
 </div>
+<section style="
+padding:60px 20px;
+background:#0b1120;
+">
 
+<h1 style="
+text-align:center;
+font-size:45px;
+margin-bottom:40px;
+color:white;
+">
+لوحة التحكم
+</h1>
+
+<div style="
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+">
+
+<div style="
+background:#111827;
+padding:30px;
+width:280px;
+border-radius:20px;
+box-shadow:0 0 15px rgba(0,0,0,0.3);
+">
+
+<h2 style="color:#22c55e;">
+الرصيد الكلي
+</h2>
+
+<h1 id="balanceBox">
+12500$
+</h1>
+
+<p style="color:#94a3b8;">
+رصيد الحساب الحالي
+</p>
+
+</div>
+
+<div style="
+background:#111827;
+padding:30px;
+width:280px;
+border-radius:20px;
+">
+
+<h2 style="color:#22c55e;">
+الأرباح اليومية
+</h2>
+
+<h1 id="dailyBox">
+350$
+</h1>
+
+<p style="color:#94a3b8;">
+آخر تحديث مباشر
+</p>
+
+</div>
+
+<div style="
+background:#111827;
+padding:30px;
+width:280px;
+border-radius:20px;
+">
+
+<h2 style="color:#22c55e;">
+المستثمرون
+</h2>
+
+<h1 id="investorBox">
+4200
+</h1>
+
+<p style="color:#94a3b8;">
+مستخدم نشط
+</p>
+
+</div>
+
+</div>
+
+<div style="
+margin-top:50px;
+background:#111827;
+padding:30px;
+border-radius:25px;
+max-width:1000px;
+margin-left:auto;
+margin-right:auto;
+">
+
+<h2 style="
+margin-bottom:20px;
+color:#22c55e;
+">
+آخر العمليات
+</h2>
+
+<div style="
+display:flex;
+justify-content:space-between;
+padding:15px 0;
+border-bottom:1px solid rgba(255,255,255,0.1);
+">
+
+<span>أحمد</span>
+<span style="color:#22c55e;">
++500$
+</span>
+
+</div>
+
+<div style="
+display:flex;
+justify-content:space-between;
+padding:15px 0;
+border-bottom:1px solid rgba(255,255,255,0.1);
+">
+
+<span>محمد</span>
+<span style="color:#22c55e;">
++1200$
+</span>
+
+</div>
+
+<div style="
+display:flex;
+justify-content:space-between;
+padding:15px 0;
+">
+
+<span>سارة</span>
+<span style="color:#22c55e;">
++300$
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+setInterval(function(){
+
+let balance =
+document.getElementById("balanceBox");
+
+let daily =
+document.getElementById("dailyBox");
+
+let investors =
+document.getElementById("investorBox");
+
+balance.innerHTML =
+(parseInt(balance.innerHTML)+15) + "$";
+
+daily.innerHTML =
+(parseInt(daily.innerHTML)+2) + "$";
+
+investors.innerHTML =
+parseInt(investors.innerHTML)+1;
+
+},4000);
+
+  </script>
 </body>
   <header style="
 background:#0b1120;
