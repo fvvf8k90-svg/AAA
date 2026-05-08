@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>منصة الاستثمار</title>
+
+<title>INVEST PRO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -11,231 +15,378 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:'Cairo',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#07111f;
+background:#06111f;
 color:white;
 overflow-x:hidden;
 }
 
+/* NAVBAR */
+
 header{
+position:fixed;
+top:0;
+width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px;
-background:#0d1b2a;
-position:sticky;
-top:0;
+padding:18px 8%;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
 .logo{
-font-size:32px;
-font-weight:bold;
-color:#00b4ff;
+font-size:35px;
+font-weight:900;
+color:#00bfff;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin:0 10px;
+margin:0 15px;
 font-size:18px;
+transition:0.3s;
 }
 
+nav a:hover{
+color:#00bfff;
+}
+
+/* HERO */
+
 .hero{
-height:90vh;
+height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
 padding:20px;
-background:linear-gradient(to bottom,#07111f,#0b2545);
+background:
+linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1640161704729-cbe966a08476?q=80&w=1200') center/cover;
 }
 
-.hero-content h1{
-font-size:60px;
+.hero h1{
+font-size:75px;
+line-height:1.4;
 margin-bottom:20px;
-line-height:1.5;
+font-weight:900;
 }
 
-.hero-content span{
-color:#00b4ff;
+.hero h1 span{
+color:#00bfff;
+text-shadow:0 0 20px #00bfff;
 }
 
-.hero-content p{
-font-size:22px;
-color:#ccc;
-margin-bottom:30px;
+.hero p{
+font-size:24px;
+max-width:700px;
+margin:auto;
+color:#ddd;
+line-height:1.8;
+margin-bottom:35px;
 }
 
 .btn{
-padding:15px 40px;
-background:#00b4ff;
-color:white;
+padding:16px 45px;
 border:none;
-border-radius:12px;
+border-radius:15px;
 font-size:20px;
+background:#00bfff;
+color:white;
 cursor:pointer;
 transition:0.3s;
+box-shadow:0 0 20px #00bfff;
 }
 
 .btn:hover{
-background:#0090cc;
-transform:scale(1.05);
+transform:scale(1.08);
+background:#0095cc;
 }
 
+/* STATS */
+
 .stats{
+padding:100px 8%;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-padding:60px 20px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
 .card{
-background:#10243f;
-padding:30px;
-border-radius:20px;
+background:#0d1d33;
+padding:40px;
+border-radius:25px;
 text-align:center;
-transition:0.3s;
+transition:0.4s;
+border:1px solid rgba(255,255,255,0.08);
 }
 
 .card:hover{
 transform:translateY(-10px);
-background:#15345c;
+box-shadow:0 0 25px rgba(0,191,255,0.4);
 }
 
 .card h2{
-font-size:40px;
-color:#00b4ff;
-margin-bottom:10px;
+font-size:45px;
+color:#00bfff;
+margin-bottom:15px;
 }
 
 .card p{
-color:#ddd;
-font-size:18px;
+font-size:20px;
+color:#ccc;
 }
 
+/* FEATURES */
+
 .section{
-padding:80px 20px;
+padding:100px 8%;
 text-align:center;
 }
 
 .section h2{
-font-size:45px;
-margin-bottom:40px;
-color:#00b4ff;
+font-size:55px;
+margin-bottom:60px;
+color:#00bfff;
 }
 
 .features{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
 
 .feature{
-background:#10243f;
-padding:30px;
-border-radius:20px;
+background:#0d1d33;
+padding:35px;
+border-radius:25px;
+transition:0.3s;
+}
+
+.feature:hover{
+transform:scale(1.04);
 }
 
 .feature h3{
-margin-bottom:15px;
-font-size:28px;
+font-size:30px;
+margin-bottom:20px;
+color:#00bfff;
 }
 
 .feature p{
+font-size:18px;
 color:#ccc;
-line-height:1.8;
+line-height:2;
 }
 
+/* PLANS */
+
+.plans{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:50px;
+}
+
+.plan{
+background:#10243f;
+padding:40px;
+border-radius:25px;
+transition:0.3s;
+position:relative;
+overflow:hidden;
+}
+
+.plan:hover{
+transform:translateY(-10px);
+}
+
+.plan::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:5px;
+background:#00bfff;
+}
+
+.plan h3{
+font-size:32px;
+margin-bottom:20px;
+}
+
+.price{
+font-size:50px;
+color:#00bfff;
+margin-bottom:20px;
+}
+
+.plan ul{
+list-style:none;
+margin-bottom:25px;
+}
+
+.plan ul li{
+margin:12px 0;
+color:#ccc;
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+padding:100px 20px;
+}
+
+.contact input,
+.contact textarea{
+width:90%;
+max-width:600px;
+padding:15px;
+margin:10px 0;
+border:none;
+border-radius:12px;
+background:#10243f;
+color:white;
+font-size:18px;
+}
+
+.contact textarea{
+height:150px;
+resize:none;
+}
+
+/* FOOTER */
+
 footer{
-background:#0d1b2a;
+background:#08111d;
 padding:30px;
 text-align:center;
 color:#aaa;
 margin-top:50px;
 }
 
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:45px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+header{
+padding:15px;
+flex-direction:column;
+}
+
+nav{
+margin-top:15px;
+}
+
+nav a{
+display:inline-block;
+margin:8px;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <header>
-<div class="logo">INVEST+</div>
+
+<div class="logo">
+INVEST PRO
+</div>
 
 <nav>
 <a href="#">الرئيسية</a>
-<a href="#">الاستثمار</a>
-<a href="#">الخطط</a>
-<a href="#">الدعم</a>
+<a href="#stats">الإحصائيات</a>
+<a href="#features">المميزات</a>
+<a href="#plans">الخطط</a>
+<a href="#contact">اتصل بنا</a>
 </nav>
+
 </header>
 
 <section class="hero">
 
-<div class="hero-content">
+<div>
 
 <h1>
-ابدأ رحلتك نحو <span>الاستثمار الذكي</span>
+استثمر أموالك مع <span>الجيل الجديد</span>
 </h1>
 
 <p>
-منصة استثمارية حديثة وآمنة لتحقيق أرباح مستقبلية بثقة.
+منصة استثمارية احترافية تمنحك السرعة والأمان والتحكم الكامل بأرباحك المستقبلية.
 </p>
 
-<button class="btn" onclick="showMessage()">
-ابدأ الاستثمار
+<button class="btn" onclick="startInvest()">
+ابدأ الآن
 </button>
 
 </div>
 
 </section>
 
-<section class="stats">
+<section class="stats" id="stats">
 
 <div class="card">
-<h2>$2M+</h2>
-<p>إجمالي الاستثمارات</p>
+<h2>$12M+</h2>
+<p>إجمالي التداولات</p>
 </div>
 
 <div class="card">
-<h2>15K+</h2>
+<h2>25K+</h2>
 <p>مستخدم نشط</p>
 </div>
 
 <div class="card">
-<h2>98%</h2>
-<p>رضا العملاء</p>
+<h2>99%</h2>
+<p>نسبة النجاح</p>
 </div>
 
 </section>
 
-<section class="section">
+<section class="section" id="features">
 
-<h2>لماذا نحن ؟</h2>
+<h2>لماذا تختارنا ؟</h2>
 
 <div class="features">
 
 <div class="feature">
-<h3>أمان عالي</h3>
+<h3>حماية متقدمة</h3>
 <p>
-نستخدم أحدث تقنيات الحماية لحماية بياناتك وأموالك.
+أنظمة حماية قوية لحفظ أموالك وبياناتك بأعلى معايير الأمان.
 </p>
 </div>
 
 <div class="feature">
-<h3>استثمار ذكي</h3>
+<h3>تحليلات ذكية</h3>
 <p>
-تحليلات دقيقة تساعدك على اتخاذ قرارات استثمارية ناجحة.
+خوارزميات حديثة لمتابعة السوق وتقديم أفضل فرص الاستثمار.
 </p>
 </div>
 
 <div class="feature">
-<h3>أرباح يومية</h3>
+<h3>سحب سريع</h3>
 <p>
-تابع أرباحك بشكل مباشر من لوحة تحكم احترافية.
+استلم أرباحك بسرعة وسهولة من خلال لوحة تحكم احترافية.
 </p>
 </div>
 
@@ -243,14 +394,98 @@ margin-top:50px;
 
 </section>
 
+<section class="section" id="plans">
+
+<h2>خطط الاستثمار</h2>
+
+<div class="plans">
+
+<div class="plan">
+<h3>الخطة الأساسية</h3>
+<div class="price">$100</div>
+
+<ul>
+<li>ربح يومي 5%</li>
+<li>دعم 24/7</li>
+<li>سحب أسبوعي</li>
+</ul>
+
+<button class="btn">
+اشترك الآن
+</button>
+
+</div>
+
+<div class="plan">
+<h3>الخطة الاحترافية</h3>
+<div class="price">$500</div>
+
+<ul>
+<li>ربح يومي 10%</li>
+<li>دعم VIP</li>
+<li>سحب يومي</li>
+</ul>
+
+<button class="btn">
+ابدأ الاستثمار
+</button>
+
+</div>
+
+<div class="plan">
+<h3>الخطة الذهبية</h3>
+<div class="price">$1000</div>
+
+<ul>
+<li>ربح يومي 15%</li>
+<li>مدير حساب خاص</li>
+<li>أولوية كاملة</li>
+</ul>
+
+<button class="btn">
+احجز الآن
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2 style="margin-bottom:30px;color:#00bfff;font-size:50px;">
+تواصل معنا
+</h2>
+
+<input type="text" placeholder="اسمك">
+
+<br>
+
+<input type="email" placeholder="بريدك الإلكتروني">
+
+<br>
+
+<textarea placeholder="اكتب رسالتك"></textarea>
+
+<br>
+
+<button class="btn">
+إرسال
+</button>
+
+</section>
+
 <footer>
-جميع الحقوق محفوظة © 2025
+© 2025 INVEST PRO - جميع الحقوق محفوظة
 </footer>
 
 <script>
 
-function showMessage(){
-alert("مرحباً بك في منصة الاستثمار 🚀");
+function startInvest(){
+
+alert("🚀 مرحباً بك في INVEST PRO");
+
 }
 
 </script>
