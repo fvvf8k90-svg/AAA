@@ -522,6 +522,105 @@ p3.innerHTML =
 },3000);
 
 </script>
+  <section style="
+padding:50px 20px;
+text-align:center;
+">
+
+<h1 style="
+font-size:40px;
+margin-bottom:40px;
+">
+إحصائيات المنصة
+</h1>
+
+<div style="
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+">
+
+<div style="
+background:#1e293b;
+padding:30px;
+width:250px;
+border-radius:20px;
+">
+
+<h2>
+المستثمرون
+</h2>
+
+<h1 id="usersCount">
+1200
+</h1>
+
+</div>
+
+<div style="
+background:#1e293b;
+padding:30px;
+width:250px;
+border-radius:20px;
+">
+
+<h2>
+الأرباح اليومية
+</h2>
+
+<h1 id="profitsCount">
+8500
+</h1>
+
+</div>
+
+<div style="
+background:#1e293b;
+padding:30px;
+width:250px;
+border-radius:20px;
+">
+
+<h2>
+العمليات الناجحة
+</h2>
+
+<h1 id="successCount">
+4300
+</h1>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+setInterval(function(){
+
+let users =
+document.getElementById("usersCount");
+
+let profits =
+document.getElementById("profitsCount");
+
+let success =
+document.getElementById("successCount");
+
+users.innerHTML =
+parseInt(users.innerHTML) + 1;
+
+profits.innerHTML =
+parseInt(profits.innerHTML) + 5;
+
+success.innerHTML =
+parseInt(success.innerHTML) + 2;
+
+},4000);
+
+</script>
 </body>
 
 </html>
