@@ -385,7 +385,31 @@ parseInt(users.innerHTML) + 1;
 },5000);
 
 </script>
+<script type="module">
 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+const firebaseConfig = {
+
+apiKey: "ضع_apiKey_هنا",
+
+authDomain: "ضع_authDomain_هنا",
+
+projectId: "ضع_projectId_هنا",
+
+storageBucket: "ضع_storageBucket_هنا",
+
+messagingSenderId: "ضع_senderId_هنا",
+
+appId: "ضع_appId_هنا"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+console.log("Firebase Connected");
+
+</script>
 </body>
 
 </html>
