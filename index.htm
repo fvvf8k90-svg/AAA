@@ -5,18 +5,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Invest Pro</title>
+<title>Watch Pro</title>
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
-}
-
 body{
+margin:0;
+font-family:Arial;
 background:#0f172a;
 color:white;
 }
@@ -24,191 +19,53 @@ color:white;
 header{
 background:#111827;
 padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
+text-align:center;
 font-size:30px;
 font-weight:bold;
 color:#22c55e;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-margin:10px;
-font-size:18px;
-}
-
-.hero{
-padding:70px 20px;
-text-align:center;
-}
-
-.hero h1{
-font-size:50px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:22px;
-color:#cbd5e1;
-margin-bottom:30px;
-}
-
-.btn{
-background:#22c55e;
-padding:15px 35px;
-border:none;
-border-radius:12px;
-font-size:20px;
-color:white;
-cursor:pointer;
-}
-
-.section-title{
-text-align:center;
-font-size:35px;
-margin-top:50px;
-margin-bottom:30px;
-}
-
-.cards{
+.container{
+padding:20px;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
 gap:20px;
-padding:20px;
 }
 
 .card{
 background:#1e293b;
-padding:25px;
-width:280px;
+width:320px;
 border-radius:20px;
-text-align:center;
+overflow:hidden;
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
+transform:scale(1.03);
 }
 
-.card h2{
-color:#22c55e;
-margin-bottom:15px;
+video{
+width:100%;
 }
 
-.card p{
-margin:10px 0;
-font-size:18px;
+.info{
+padding:15px;
 }
 
-.stats{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-padding:30px;
-}
-
-.stat-box{
-background:#111827;
-padding:30px;
-width:250px;
-border-radius:20px;
-text-align:center;
-}
-
-.number{
-font-size:40px;
-color:#22c55e;
+.info h2{
+margin:0;
 margin-bottom:10px;
 }
 
-.investors{
-padding:20px;
-}
-
-.investor{
-background:#1e293b;
-margin:10px auto;
-padding:15px;
-width:90%;
-max-width:500px;
-border-radius:15px;
-}
-
-.actions{
-display:flex;
-justify-content:center;
-gap:20px;
-padding:40px;
-flex-wrap:wrap;
-}
-
-.action-btn{
-background:#2563eb;
-padding:15px 30px;
-border-radius:12px;
-text-decoration:none;
-color:white;
-font-size:18px;
-}
-
-.contact{
-text-align:center;
-padding:40px;
-}
-
-.telegram{
-background:#229ED9;
-padding:15px 30px;
-border-radius:12px;
-display:inline-block;
-text-decoration:none;
-color:white;
-font-size:20px;
-}
-
-.login{
-background:#111827;
-margin:40px auto;
-padding:30px;
-max-width:400px;
-border-radius:20px;
-text-align:center;
-}
-
-input{
-width:100%;
-padding:15px;
-margin-top:15px;
+button{
+padding:10px 20px;
+background:#22c55e;
 border:none;
 border-radius:10px;
-font-size:18px;
-}
-
-footer{
-background:#111827;
-padding:25px;
-text-align:center;
-margin-top:40px;
-color:#94a3b8;
-}
-
-@media(max-width:700px){
-
-.hero h1{
-font-size:38px;
-}
-
-.hero p{
-font-size:18px;
-}
-
+color:white;
+font-size:16px;
+cursor:pointer;
 }
 
 </style>
@@ -217,663 +74,61 @@ font-size:18px;
 <body>
 
 <header>
-
-<div class="logo">
-Invest Pro
-</div>
-
-<nav>
-<a href="#">الرئيسية</a>
-<a href="#">الاستثمار</a>
-<a href="#">الأرباح</a>
-<a href="#">الدعم</a>
-</nav>
-
+Watch Pro
 </header>
 
-<section class="hero">
-
-<h1>
-استثمر بأمان وحقق أرباح يومية
-</h1>
-
-<p>
-منصة استثمار احترافية للمستثمرين حول العالم
-</p>
-
-<button class="btn" onclick="startInvest()">
-ابدأ الاستثمار
-</button>
-
-<h2 id="msg" style="margin-top:25px;color:#22c55e;"></h2>
-
-</section>
-
-<h1 class="section-title">
-خطط الاستثمار
-</h1>
-
-<section class="cards">
+<div class="container">
 
 <div class="card">
-<h2>الخطة البرونزية</h2>
-<p>استثمار يبدأ من 10$</p>
-<p>ربح يومي 5%</p>
-<button class="btn">اشترك</button>
+
+<video controls>
+<source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+</video>
+
+<div class="info">
+
+<h2>
+فيديو تجريبي
+</h2>
+
+<p>
+مشاهدة بجودة عالية
+</p>
+
+<button>
+مشاهدة الآن
+</button>
+
+</div>
+
 </div>
 
 <div class="card">
-<h2>الخطة الفضية</h2>
-<p>استثمار يبدأ من 50$</p>
-<p>ربح يومي 10%</p>
-<button class="btn">اشترك</button>
-</div>
 
-<div class="card">
-<h2>الخطة الذهبية</h2>
-<p>استثمار يبدأ من 100$</p>
-<p>ربح يومي 15%</p>
-<button class="btn">اشترك</button>
-</div>
+<video controls>
+<source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+</video>
 
-</section>
+<div class="info">
 
-<h1 class="section-title">
-إحصائيات المنصة
-</h1>
-
-<section class="stats">
-
-<div class="stat-box">
-<div class="number" id="users">1200</div>
-<p>مستخدم</p>
-</div>
-
-<div class="stat-box">
-<div class="number" id="profits">25000$</div>
-<p>إجمالي الأرباح</p>
-</div>
-
-<div class="stat-box">
-<div class="number">99%</div>
-<p>نسبة النجاح</p>
-</div>
-
-</section>
-
-<h1 class="section-title">
-آخر المستثمرين
-</h1>
-
-<section class="investors">
-
-<div class="investor">
-أحمد — استثمر 500$
-</div>
-
-<div class="investor">
-محمد — استثمر 1200$
-</div>
-
-<div class="investor">
-سارة — استثمر 300$
-</div>
-
-</section>
-
-<h1 class="section-title">
-تسجيل الدخول
-</h1>
-
-<section class="login">
-
-<input type="text" placeholder="اسم المستخدم">
-
-<input type="password" placeholder="كلمة المرور">
-
-<button class="btn" style="margin-top:20px;">
-دخول
-</button>
-
-</section>
-
-<section class="actions">
-
-<a class="action-btn" href="#">
-إيداع
-</a>
-
-<a class="action-btn" href="#">
-سحب الأرباح
-</a>
-
-</section>
-
-<section class="contact">
-
-<h1 style="margin-bottom:20px;">
-تواصل معنا
-</h1>
-
-<a class="telegram" href="https://t.me/nnrrff11">
-تيليجرام
-</a>
-
-</section>
-
-<footer>
-© 2025 Invest Pro - جميع الحقوق محفوظة
-</footer>
-
-<script>
-
-function startInvest(){
-
-document.getElementById("msg").innerHTML =
-"تم بدء الاستثمار بنجاح";
-
-}
-
-setInterval(function(){
-
-let users =
-document.getElementById("users");
-
-users.innerHTML =
-parseInt(users.innerHTML) + 1;
-
-},5000);
-
-</script>
-<script type="module">
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
-const firebaseConfig = {
-
-apiKey: "ضع_apiKey_هنا",
-
-authDomain: "ضع_authDomain_هنا",
-
-projectId: "ضع_projectId_هنا",
-
-storageBucket: "ضع_storageBucket_هنا",
-
-messagingSenderId: "ضع_senderId_هنا",
-
-appId: "ضع_appId_هنا"
-
-};
-
-const app = initializeApp(firebaseConfig);
-
-console.log("Firebase Connected");
-
-</script>
-  <section style="padding:50px 20px;">
-
-<h1 style="
-text-align:center;
-font-size:40px;
-margin-bottom:40px;
-">
-الأرباح اليومية
-</h1>
-
-<div style="
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-">
-
-<div style="
-background:#1e293b;
-padding:25px;
-width:280px;
-border-radius:20px;
-text-align:center;
-">
-
-<h2 style="color:#22c55e;">
-الخطة البرونزية
+<h2>
+فيديو ثاني
 </h2>
-
-<h1 id="profit1">
-25$
-</h1>
 
 <p>
-أرباح اليوم
+بث سريع واحترافي
 </p>
 
-</div>
-
-<div style="
-background:#1e293b;
-padding:25px;
-width:280px;
-border-radius:20px;
-text-align:center;
-">
-
-<h2 style="color:#22c55e;">
-الخطة الفضية
-</h2>
-
-<h1 id="profit2">
-80$
-</h1>
-
-<p>
-أرباح اليوم
-</p>
-
-</div>
-
-<div style="
-background:#1e293b;
-padding:25px;
-width:280px;
-border-radius:20px;
-text-align:center;
-">
-
-<h2 style="color:#22c55e;">
-الخطة الذهبية
-</h2>
-
-<h1 id="profit3">
-150$
-</h1>
-
-<p>
-أرباح اليوم
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<script>
-
-setInterval(function(){
-
-let p1 =
-document.getElementById("profit1");
-
-let p2 =
-document.getElementById("profit2");
-
-let p3 =
-document.getElementById("profit3");
-
-p1.innerHTML =
-(parseInt(p1.innerHTML)+1) + "$";
-
-p2.innerHTML =
-(parseInt(p2.innerHTML)+2) + "$";
-
-p3.innerHTML =
-(parseInt(p3.innerHTML)+3) + "$";
-
-},3000);
-
-</script>
-  <section style="
-padding:50px 20px;
-text-align:center;
-">
-
-<h1 style="
-font-size:40px;
-margin-bottom:40px;
-">
-إحصائيات المنصة
-</h1>
-
-<div style="
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:20px;
-">
-
-<div style="
-background:#1e293b;
-padding:30px;
-width:250px;
-border-radius:20px;
-">
-
-<h2>
-المستثمرون
-</h2>
-
-<h1 id="usersCount">
-1200
-</h1>
-
-</div>
-
-<div style="
-background:#1e293b;
-padding:30px;
-width:250px;
-border-radius:20px;
-">
-
-<h2>
-الأرباح اليومية
-</h2>
-
-<h1 id="profitsCount">
-8500
-</h1>
-
-</div>
-
-<div style="
-background:#1e293b;
-padding:30px;
-width:250px;
-border-radius:20px;
-">
-
-<h2>
-العمليات الناجحة
-</h2>
-
-<h1 id="successCount">
-4300
-</h1>
-
-</div>
-
-</div>
-
-</section>
-
-<script>
-
-setInterval(function(){
-
-let users =
-document.getElementById("usersCount");
-
-let profits =
-document.getElementById("profitsCount");
-
-let success =
-document.getElementById("successCount");
-
-users.innerHTML =
-parseInt(users.innerHTML) + 1;
-
-profits.innerHTML =
-parseInt(profits.innerHTML) + 5;
-
-success.innerHTML =
-parseInt(success.innerHTML) + 2;
-
-},4000);
-
-</script>
-  <style>
-
-.card{
-animation:fadeUp 1s ease;
-}
-
-.stat-box{
-animation:fadeUp 1.5s ease;
-}
-
-.investor{
-animation:fadeUp 2s ease;
-}
-
-.btn{
-transition:0.3s;
-box-shadow:0 0 15px #22c55e;
-}
-
-.btn:hover{
-transform:scale(1.08);
-box-shadow:0 0 30px #22c55e;
-}
-
-.action-btn{
-transition:0.3s;
-}
-
-.action-btn:hover{
-transform:translateY(-8px);
-}
-
-.telegram{
-transition:0.3s;
-}
-
-.telegram:hover{
-transform:scale(1.1);
-box-shadow:0 0 20px #229ED9;
-}
-
-@keyframes fadeUp{
-
-from{
-opacity:0;
-transform:translateY(50px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-body{
-scroll-behavior:smooth;
-}
-
-</style>
-
-<script>
-
-window.addEventListener("scroll", function(){
-
-let cards =
-document.querySelectorAll(".card");
-
-cards.forEach((card)=>{
-
-let position =
-card.getBoundingClientRect().top;
-
-let screen =
-window.innerHeight;
-
-if(position < screen - 100){
-
-card.style.opacity = "1";
-card.style.transform = "translateY(0px)";
-
-}
-
-});
-
-});
-
-</script>
-  <section style="
-padding:60px 20px;
-">
-
-<h1 style="
-text-align:center;
-font-size:40px;
-margin-bottom:40px;
-">
-لوحة المستخدم
-</h1>
-
-<div style="
-max-width:900px;
-margin:auto;
-background:#1e293b;
-padding:30px;
-border-radius:25px;
-box-shadow:0 0 25px rgba(0,0,0,0.4);
-">
-
-<div style="
-display:flex;
-justify-content:space-between;
-flex-wrap:wrap;
-gap:20px;
-">
-
-<div style="
-background:#0f172a;
-padding:25px;
-border-radius:20px;
-flex:1;
-min-width:220px;
-text-align:center;
-">
-
-<h2>
-اسم المستخدم
-</h2>
-
-<h1 style="color:#22c55e;">
-Investor
-</h1>
-
-</div>
-
-<div style="
-background:#0f172a;
-padding:25px;
-border-radius:20px;
-flex:1;
-min-width:220px;
-text-align:center;
-">
-
-<h2>
-الرصيد الحالي
-</h2>
-
-<h1 id="balance" style="color:#22c55e;">
-1500$
-</h1>
-
-</div>
-
-<div style="
-background:#0f172a;
-padding:25px;
-border-radius:20px;
-flex:1;
-min-width:220px;
-text-align:center;
-">
-
-<h2>
-الأرباح اليومية
-</h2>
-
-<h1 id="dailyProfit" style="color:#22c55e;">
-120$
-</h1>
-
-</div>
-
-</div>
-
-<div style="
-margin-top:30px;
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-">
-
-<button onclick="deposit()" style="
-padding:15px 35px;
-border:none;
-border-radius:12px;
-background:#2563eb;
-color:white;
-font-size:18px;
-cursor:pointer;
-">
-إيداع
-</button>
-
-<button onclick="withdraw()" style="
-padding:15px 35px;
-border:none;
-border-radius:12px;
-background:#22c55e;
-color:white;
-font-size:18px;
-cursor:pointer;
-">
-سحب الأرباح
+<button>
+ابدأ المشاهدة
 </button>
 
 </div>
 
-<h2 id="dashboardMsg" style="
-text-align:center;
-margin-top:25px;
-color:#22c55e;
-">
-</h2>
+</div>
 
 </div>
 
-</section>
-
-<script>
-
-function deposit(){
-
-document.getElementById("dashboardMsg").innerHTML =
-"تم فتح صفحة الإيداع";
-
-}
-
-function withdraw(){
-
-document.getElementById("dashboardMsg").innerHTML =
-"تم طلب سحب الأرباح";
-
-}
-
-setInterval(function(){
-
-let balance =
-document.getElementById("balance");
-
-let profit =
-document.getElementById("dailyProfit");
-
-balance.innerHTML =
-(parseInt(balance.innerHTML)+5) + "$";
-
-profit.innerHTML =
-(parseInt(profit.innerHTML)+1) + "$";
-
-},5000);
-
-</script>
 </body>
 
 </html>
