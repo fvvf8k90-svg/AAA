@@ -2,91 +2,88 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>تطبيق الاستثمار الافتراضي</title>
+<title>إعلان المنصة الاستثمارية الافتراضية</title>
 <style>
-  body { font-family: Arial, sans-serif; background: linear-gradient(120deg, #1e1e2f, #0f0f1f); color: #fff; margin:0; padding:0; text-align: center;}
-  h1 { color: #00ffcc; margin-top: 20px; }
-  .container { max-width: 700px; margin: 20px auto; padding: 20px; background: #2c2c3e; border-radius: 15px; }
-  input, select { padding: 8px; margin: 5px; border-radius: 5px; border: none; }
-  button { padding: 10px 20px; margin: 10px; cursor: pointer; background: #00ffcc; border: none; color: #000; font-weight: bold; border-radius: 5px; }
-  table { width: 100%; margin-top: 20px; border-collapse: collapse; }
-  th, td { padding: 10px; border: 1px solid #444; }
-  th { background: #00ffcc; color: #000; }
+  body { margin:0; padding:0; font-family: Arial; background: linear-gradient(120deg,#1e1e2f,#0f0f1f); color:#fff; text-align:center; overflow:hidden; }
+  .scene { position: relative; width: 100%; height: 100vh; display:flex; justify-content:center; align-items:center; flex-direction:column; }
+  h1 { font-size: 3em; color:#00ffcc; margin:20px; animation: glow 1.5s infinite alternate; }
+  p { font-size: 1.5em; margin:10px; animation: glowText 2s infinite alternate; }
+  .level-box { padding:15px; margin:10px; border-radius:10px; background:#00ffcc; color:#000; font-weight:bold; width:200px; animation: float 3s infinite alternate; }
+  .wallet { background:#2c2c3e; padding:20px; border-radius:15px; margin-top:20px; width:300px; animation: fadeIn 2s ease-in; }
+  table { width:80%; margin:10px auto; border-collapse: collapse; }
+  th, td { border:1px solid #444; padding:5px; }
+  th { background:#00ffcc; color:#000; }
+  
+  @keyframes glow { 0%{text-shadow:0 0 5px #00ffcc,0 0 10px #00ffcc;} 100%{text-shadow:0 0 20px #00ffcc,0 0 40px #00ffcc;} }
+  @keyframes glowText { 0%{text-shadow:0 0 5px #fff;} 100%{text-shadow:0 0 20px #fff;} }
+  @keyframes float { 0%{transform:translateY(0);} 100%{transform:translateY(-10px);} }
+  @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
 </style>
 </head>
 <body>
-<div class="container">
-  <h1>تطبيق الاستثمار الافتراضي</h1>
-  
-  <div id="wallet">
+
+<div class="scene" id="scene">
+  <h1>مرحبا بك في منصتنا الاستثمارية الافتراضية!</h1>
+  <p>ابدأ رحلتك الاستثمارية الآن وحقق أرباح يومية!</p>
+
+  <div class="level-box" id="level1">المستوى 5 - $25 → ربح يومي $1</div>
+  <div class="level-box" id="level2">المستوى 4 - $50 → ربح يومي $2</div>
+  <div class="level-box" id="level3">المستوى 3 - $100 → ربح يومي $3</div>
+  <div class="level-box" id="level4">المستوى 2 - $150 → ربح يومي $4</div>
+
+  <div class="wallet">
     <p>رصيدك الحالي: $<span id="balance">0</span></p>
-    
-    <label for="level">اختر مستوى الاستثمار:</label>
-    <select id="level">
-      <option value="150">المستوى 2 - $150</option>
-      <option value="100">المستوى 3 - $100</option>
-      <option value="50">المستوى 4 - $50</option>
-      <option value="25">المستوى 5 - $25</option>
-    </select>
-    <br>
-    <button onclick="invest()">استثمر</button>
-  </div>
-  
-  <div id="report">
-    <h3>تقرير اليوم</h3>
     <p id="message">لم تقم بأي استثمار اليوم.</p>
   </div>
 
-  <div id="history">
-    <h3>سجل الاستثمارات</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>التاريخ</th>
-          <th>المستوى</th>
-          <th>المبلغ المستثمَر</th>
-          <th>الأرباح</th>
-        </tr>
-      </thead>
-      <tbody id="historyBody">
-      </tbody>
-    </table>
-  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>التاريخ</th>
+        <th>المستوى</th>
+        <th>المبلغ المستثمَر</th>
+        <th>الأرباح</th>
+      </tr>
+    </thead>
+    <tbody id="historyBody">
+    </tbody>
+  </table>
 </div>
 
 <script>
 let balance = 0;
+const levels = [
+  {level: 25, profit: 1},
+  {level: 50, profit: 2},
+  {level: 100, profit: 3},
+  {level: 150, profit: 4},
+];
 
-function invest() {
-  const level = parseFloat(document.getElementById('level').value);
-  if(level <= 0) {
-    alert("المستوى غير صالح!");
-    return;
-  }
-
-  // أرباح يومية حسب المستوى
-  let dailyProfit;
-  if(level === 150) dailyProfit = 4;
-  else if(level === 100) dailyProfit = 3;
-  else if(level === 50) dailyProfit = 2;
-  else if(level === 25) dailyProfit = 1;
-
-  balance += dailyProfit;
+// محاكاة الاستثمار تلقائيًا كفيديو ترويجي
+let investIndex = 0;
+function autoInvest() {
+  if(investIndex >= levels.length) return;
+  const current = levels[investIndex];
+  balance += current.profit;
   document.getElementById('balance').innerText = balance.toFixed(2);
-  
-  // عرض التقرير
-  document.getElementById('message').innerText = `استثمرت $${level} في هذا المستوى وربحت اليوم $${dailyProfit}`;
+  document.getElementById('message').innerText = `استثمرت $${current.level} وربحت اليوم $${current.profit}`;
 
-  // إضافة سجل الاستثمار
-  const today = new Date().toLocaleString();
+  const today = new Date().toLocaleTimeString();
   const row = `<tr>
     <td>${today}</td>
-    <td>${level}</td>
-    <td>${level}</td>
-    <td>${dailyProfit}</td>
+    <td>${current.level}</td>
+    <td>${current.level}</td>
+    <td>${current.profit}</td>
   </tr>`;
   document.getElementById('historyBody').innerHTML += row;
+
+  investIndex++;
+  setTimeout(autoInvest, 2000); // استثمار كل ثانيتين
 }
+
+// بدء الفيديو التفاعلي تلقائيًا
+autoInvest();
 </script>
+
 </body>
 </html>
