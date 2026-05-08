@@ -709,6 +709,171 @@ card.style.transform = "translateY(0px)";
 });
 
 </script>
+  <section style="
+padding:60px 20px;
+">
+
+<h1 style="
+text-align:center;
+font-size:40px;
+margin-bottom:40px;
+">
+لوحة المستخدم
+</h1>
+
+<div style="
+max-width:900px;
+margin:auto;
+background:#1e293b;
+padding:30px;
+border-radius:25px;
+box-shadow:0 0 25px rgba(0,0,0,0.4);
+">
+
+<div style="
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:20px;
+">
+
+<div style="
+background:#0f172a;
+padding:25px;
+border-radius:20px;
+flex:1;
+min-width:220px;
+text-align:center;
+">
+
+<h2>
+اسم المستخدم
+</h2>
+
+<h1 style="color:#22c55e;">
+Investor
+</h1>
+
+</div>
+
+<div style="
+background:#0f172a;
+padding:25px;
+border-radius:20px;
+flex:1;
+min-width:220px;
+text-align:center;
+">
+
+<h2>
+الرصيد الحالي
+</h2>
+
+<h1 id="balance" style="color:#22c55e;">
+1500$
+</h1>
+
+</div>
+
+<div style="
+background:#0f172a;
+padding:25px;
+border-radius:20px;
+flex:1;
+min-width:220px;
+text-align:center;
+">
+
+<h2>
+الأرباح اليومية
+</h2>
+
+<h1 id="dailyProfit" style="color:#22c55e;">
+120$
+</h1>
+
+</div>
+
+</div>
+
+<div style="
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+">
+
+<button onclick="deposit()" style="
+padding:15px 35px;
+border:none;
+border-radius:12px;
+background:#2563eb;
+color:white;
+font-size:18px;
+cursor:pointer;
+">
+إيداع
+</button>
+
+<button onclick="withdraw()" style="
+padding:15px 35px;
+border:none;
+border-radius:12px;
+background:#22c55e;
+color:white;
+font-size:18px;
+cursor:pointer;
+">
+سحب الأرباح
+</button>
+
+</div>
+
+<h2 id="dashboardMsg" style="
+text-align:center;
+margin-top:25px;
+color:#22c55e;
+">
+</h2>
+
+</div>
+
+</section>
+
+<script>
+
+function deposit(){
+
+document.getElementById("dashboardMsg").innerHTML =
+"تم فتح صفحة الإيداع";
+
+}
+
+function withdraw(){
+
+document.getElementById("dashboardMsg").innerHTML =
+"تم طلب سحب الأرباح";
+
+}
+
+setInterval(function(){
+
+let balance =
+document.getElementById("balance");
+
+let profit =
+document.getElementById("dailyProfit");
+
+balance.innerHTML =
+(parseInt(balance.innerHTML)+5) + "$";
+
+profit.innerHTML =
+(parseInt(profit.innerHTML)+1) + "$";
+
+},5000);
+
+</script>
 </body>
 
 </html>
