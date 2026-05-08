@@ -621,6 +621,94 @@ parseInt(success.innerHTML) + 2;
 },4000);
 
 </script>
+  <style>
+
+.card{
+animation:fadeUp 1s ease;
+}
+
+.stat-box{
+animation:fadeUp 1.5s ease;
+}
+
+.investor{
+animation:fadeUp 2s ease;
+}
+
+.btn{
+transition:0.3s;
+box-shadow:0 0 15px #22c55e;
+}
+
+.btn:hover{
+transform:scale(1.08);
+box-shadow:0 0 30px #22c55e;
+}
+
+.action-btn{
+transition:0.3s;
+}
+
+.action-btn:hover{
+transform:translateY(-8px);
+}
+
+.telegram{
+transition:0.3s;
+}
+
+.telegram:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px #229ED9;
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(50px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+body{
+scroll-behavior:smooth;
+}
+
+</style>
+
+<script>
+
+window.addEventListener("scroll", function(){
+
+let cards =
+document.querySelectorAll(".card");
+
+cards.forEach((card)=>{
+
+let position =
+card.getBoundingClientRect().top;
+
+let screen =
+window.innerHeight;
+
+if(position < screen - 100){
+
+card.style.opacity = "1";
+card.style.transform = "translateY(0px)";
+
+}
+
+});
+
+});
+
+</script>
 </body>
 
 </html>
