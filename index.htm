@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 
 <head>
 <meta charset="UTF-8">
@@ -9,43 +9,70 @@
 
 <style>
 
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial;
+}
+
+body{
 background:#0f172a;
 color:white;
-text-align:center;
 }
 
 header{
 background:#111827;
 padding:20px;
-font-size:32px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:30px;
 font-weight:bold;
+color:#22c55e;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:10px;
+font-size:18px;
 }
 
 .hero{
-padding:60px 20px;
+padding:70px 20px;
+text-align:center;
 }
 
 .hero h1{
-font-size:42px;
+font-size:50px;
+margin-bottom:20px;
 }
 
 .hero p{
-font-size:20px;
+font-size:22px;
 color:#cbd5e1;
+margin-bottom:30px;
 }
 
-button{
-padding:15px 35px;
-font-size:18px;
+.btn{
 background:#22c55e;
+padding:15px 35px;
 border:none;
-border-radius:10px;
+border-radius:12px;
+font-size:20px;
 color:white;
 cursor:pointer;
-margin-top:20px;
+}
+
+.section-title{
+text-align:center;
+font-size:35px;
+margin-top:50px;
+margin-bottom:30px;
 }
 
 .cards{
@@ -53,49 +80,135 @@ display:flex;
 flex-wrap:wrap;
 justify-content:center;
 gap:20px;
-padding:30px;
+padding:20px;
 }
 
 .card{
 background:#1e293b;
 padding:25px;
-width:250px;
-border-radius:15px;
+width:280px;
+border-radius:20px;
+text-align:center;
 transition:0.3s;
 }
 
 .card:hover{
-transform:scale(1.05);
+transform:translateY(-10px);
 }
 
 .card h2{
 color:#22c55e;
+margin-bottom:15px;
+}
+
+.card p{
+margin:10px 0;
+font-size:18px;
 }
 
 .stats{
-padding:40px;
-background:#111827;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:30px;
 }
 
-.stat-number{
+.stat-box{
+background:#111827;
+padding:30px;
+width:250px;
+border-radius:20px;
+text-align:center;
+}
+
+.number{
 font-size:40px;
 color:#22c55e;
+margin-bottom:10px;
+}
+
+.investors{
+padding:20px;
+}
+
+.investor{
+background:#1e293b;
+margin:10px auto;
+padding:15px;
+width:90%;
+max-width:500px;
+border-radius:15px;
+}
+
+.actions{
+display:flex;
+justify-content:center;
+gap:20px;
+padding:40px;
+flex-wrap:wrap;
+}
+
+.action-btn{
+background:#2563eb;
+padding:15px 30px;
+border-radius:12px;
+text-decoration:none;
+color:white;
+font-size:18px;
 }
 
 .contact{
+text-align:center;
 padding:40px;
+}
+
+.whatsapp{
+background:#22c55e;
+padding:15px 30px;
+border-radius:12px;
+display:inline-block;
+text-decoration:none;
+color:white;
+font-size:20px;
+}
+
+.login{
+background:#111827;
+margin:40px auto;
+padding:30px;
+max-width:400px;
+border-radius:20px;
+text-align:center;
+}
+
+input{
+width:100%;
+padding:15px;
+margin-top:15px;
+border:none;
+border-radius:10px;
+font-size:18px;
 }
 
 footer{
 background:#111827;
-padding:20px;
-margin-top:30px;
+padding:25px;
+text-align:center;
+margin-top:40px;
 color:#94a3b8;
 }
 
-a{
-color:white;
-text-decoration:none;
+@media(max-width:700px){
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:18px;
+}
+
 }
 
 </style>
@@ -104,82 +217,175 @@ text-decoration:none;
 <body>
 
 <header>
+
+<div class="logo">
 Invest Pro
+</div>
+
+<nav>
+<a href="#">الرئيسية</a>
+<a href="#">الاستثمار</a>
+<a href="#">الأرباح</a>
+<a href="#">الدعم</a>
+</nav>
+
 </header>
 
 <section class="hero">
 
-<h1>استثمر بأمان وحقق أرباحك</h1>
+<h1>
+استثمر بأمان وحقق أرباح يومية
+</h1>
 
 <p>
-منصة استثمار حديثة وسريعة للمستثمرين
+منصة استثمار احترافية للمستثمرين حول العالم
 </p>
 
-<button onclick="joinNow()">
-ابدأ الآن
+<button class="btn" onclick="startInvest()">
+ابدأ الاستثمار
 </button>
 
-<p id="msg"></p>
+<h2 id="msg" style="margin-top:25px;color:#22c55e;"></h2>
 
 </section>
+
+<h1 class="section-title">
+خطط الاستثمار
+</h1>
 
 <section class="cards">
 
 <div class="card">
 <h2>الخطة البرونزية</h2>
+<p>استثمار يبدأ من 10$</p>
 <p>ربح يومي 5%</p>
+<button class="btn">اشترك</button>
 </div>
 
 <div class="card">
 <h2>الخطة الفضية</h2>
+<p>استثمار يبدأ من 50$</p>
 <p>ربح يومي 10%</p>
+<button class="btn">اشترك</button>
 </div>
 
 <div class="card">
 <h2>الخطة الذهبية</h2>
+<p>استثمار يبدأ من 100$</p>
 <p>ربح يومي 15%</p>
+<button class="btn">اشترك</button>
 </div>
 
 </section>
 
+<h1 class="section-title">
+إحصائيات المنصة
+</h1>
+
 <section class="stats">
 
-<h1>إحصائيات المنصة</h1>
-
-<div class="stat-number" id="users">
-1200
+<div class="stat-box">
+<div class="number" id="users">1200</div>
+<p>مستخدم</p>
 </div>
 
-<p>مستخدم نشط</p>
+<div class="stat-box">
+<div class="number" id="profits">25000$</div>
+<p>إجمالي الأرباح</p>
+</div>
+
+<div class="stat-box">
+<div class="number">99%</div>
+<p>نسبة النجاح</p>
+</div>
+
+</section>
+
+<h1 class="section-title">
+آخر المستثمرين
+</h1>
+
+<section class="investors">
+
+<div class="investor">
+أحمد — استثمر 500$
+</div>
+
+<div class="investor">
+محمد — استثمر 1200$
+</div>
+
+<div class="investor">
+سارة — استثمر 300$
+</div>
+
+</section>
+
+<h1 class="section-title">
+تسجيل الدخول
+</h1>
+
+<section class="login">
+
+<input type="text" placeholder="اسم المستخدم">
+
+<input type="password" placeholder="كلمة المرور">
+
+<button class="btn" style="margin-top:20px;">
+دخول
+</button>
+
+</section>
+
+<section class="actions">
+
+<a class="action-btn" href="#">
+إيداع
+</a>
+
+<a class="action-btn" href="#">
+سحب الأرباح
+</a>
 
 </section>
 
 <section class="contact">
 
-<h1>تواصل معنا</h1>
+<h1 style="margin-bottom:20px;">
+تواصل معنا
+</h1>
 
-<button>
-<a href="https://wa.me/0000000000">
+<a class="whatsapp" href="https://wa.me/0000000000">
 واتساب
 </a>
-</button>
 
 </section>
 
 <footer>
-© 2025 Invest Pro
+© 2025 Invest Pro - جميع الحقوق محفوظة
 </footer>
 
 <script>
 
-function joinNow(){
+function startInvest(){
 
 document.getElementById("msg").innerHTML =
-"تم تسجيل الدخول بنجاح";
+"تم بدء الاستثمار بنجاح";
 
 }
+
+setInterval(function(){
+
+let users =
+document.getElementById("users");
+
+users.innerHTML =
+parseInt(users.innerHTML) + 1;
+
+},5000);
 
 </script>
 
 </body>
+
 </html>
