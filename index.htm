@@ -24,7 +24,26 @@ background:#06111f;
 color:white;
 overflow-x:hidden;
 }
+.login-box{
+width:90%;
+max-width:400px;
+margin:50px auto;
+padding:30px;
+background:#111827;
+border-radius:20px;
+text-align:center;
+}
 
+.login-box input{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:none;
+border-radius:10px;
+background:#1f2937;
+color:white;
+font-size:16px;
+}
 /* NAVBAR */
 
 header{
@@ -485,6 +504,68 @@ function startInvest(){
   
 }
 
+</script>
+  <div class="login-box">
+<h2>تسجيل الدخول</h2>
+
+<input type="email" id="email" placeholder="البريد الإلكتروني">
+
+<input type="password" id="password" placeholder="كلمة المرور">
+
+<button onclick="loginUser()" class="btn">
+دخول
+</button>
+
+<br><br>
+
+<button onclick="registerUser()" class="btn">
+إنشاء حساب
+</button>
+
+</div>
+
+<script>
+function registerUser(){
+
+let email =
+document.getElementById("email").value;
+
+let password =
+document.getElementById("password").value;
+
+localStorage.setItem("email", email);
+localStorage.setItem("password", password);
+
+alert("تم إنشاء الحساب بنجاح");
+
+}
+
+function loginUser(){
+
+let email =
+document.getElementById("email").value;
+
+let password =
+document.getElementById("password").value;
+
+let savedEmail =
+localStorage.getItem("email");
+
+let savedPassword =
+localStorage.getItem("password");
+
+if(email === savedEmail &&
+password === savedPassword){
+
+alert("تم تسجيل الدخول");
+
+}else{
+
+alert("بيانات غير صحيحة");
+
+}
+
+}
 </script>
 
 </body>
