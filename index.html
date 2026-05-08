@@ -1,162 +1,92 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Invest Pro</title>
-
+<title>تطبيق الاستثمار الافتراضي</title>
 <style>
-
-body{
-margin:0;
-font-family:Arial;
-background:#0f172a;
-color:white;
-}
-
-header{
-background:#111827;
-padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-size:30px;
-font-weight:bold;
-color:#22c55e;
-}
-
-.hero{
-padding:100px 20px;
-text-align:center;
-}
-
-.hero h1{
-font-size:55px;
-}
-
-.hero p{
-font-size:22px;
-color:#cbd5e1;
-}
-
-button{
-padding:15px 35px;
-font-size:20px;
-background:#22c55e;
-border:none;
-border-radius:12px;
-color:white;
-cursor:pointer;
-margin-top:20px;
-}
-
-.cards{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-padding:40px;
-}
-
-.card{
-background:#1e293b;
-padding:25px;
-width:280px;
-border-radius:20px;
-text-align:center;
-}
-
-footer{
-background:#111827;
-padding:20px;
-text-align:center;
-margin-top:40px;
-}
-
+  body { font-family: Arial, sans-serif; background: linear-gradient(120deg, #1e1e2f, #0f0f1f); color: #fff; margin:0; padding:0; text-align: center;}
+  h1 { color: #00ffcc; margin-top: 20px; }
+  .container { max-width: 700px; margin: 20px auto; padding: 20px; background: #2c2c3e; border-radius: 15px; }
+  input, select { padding: 8px; margin: 5px; border-radius: 5px; border: none; }
+  button { padding: 10px 20px; margin: 10px; cursor: pointer; background: #00ffcc; border: none; color: #000; font-weight: bold; border-radius: 5px; }
+  table { width: 100%; margin-top: 20px; border-collapse: collapse; }
+  th, td { padding: 10px; border: 1px solid #444; }
+  th { background: #00ffcc; color: #000; }
 </style>
 </head>
-
 <body>
+<div class="container">
+  <h1>تطبيق الاستثمار الافتراضي</h1>
+  
+  <div id="wallet">
+    <p>رصيدك الحالي: $<span id="balance">0</span></p>
+    
+    <label for="level">اختر مستوى الاستثمار:</label>
+    <select id="level">
+      <option value="150">المستوى 2 - $150</option>
+      <option value="100">المستوى 3 - $100</option>
+      <option value="50">المستوى 4 - $50</option>
+      <option value="25">المستوى 5 - $25</option>
+    </select>
+    <br>
+    <button onclick="invest()">استثمر</button>
+  </div>
+  
+  <div id="report">
+    <h3>تقرير اليوم</h3>
+    <p id="message">لم تقم بأي استثمار اليوم.</p>
+  </div>
 
-<header>
-
-<div class="logo">
-Invest Pro
+  <div id="history">
+    <h3>سجل الاستثمارات</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>التاريخ</th>
+          <th>المستوى</th>
+          <th>المبلغ المستثمَر</th>
+          <th>الأرباح</th>
+        </tr>
+      </thead>
+      <tbody id="historyBody">
+      </tbody>
+    </table>
+  </div>
 </div>
 
-<button>
-Login
-</button>
+<script>
+let balance = 0;
 
-</header>
+function invest() {
+  const level = parseFloat(document.getElementById('level').value);
+  if(level <= 0) {
+    alert("المستوى غير صالح!");
+    return;
+  }
 
-<section class="hero">
+  // أرباح يومية حسب المستوى
+  let dailyProfit;
+  if(level === 150) dailyProfit = 4;
+  else if(level === 100) dailyProfit = 3;
+  else if(level === 50) dailyProfit = 2;
+  else if(level === 25) dailyProfit = 1;
 
-<h1>
-منصة استثمار احترافية
-</h1>
+  balance += dailyProfit;
+  document.getElementById('balance').innerText = balance.toFixed(2);
+  
+  // عرض التقرير
+  document.getElementById('message').innerText = `استثمرت $${level} في هذا المستوى وربحت اليوم $${dailyProfit}`;
 
-<p>
-ابدأ الاستثمار وتحقيق الأرباح اليومية بسهولة
-</p>
-
-<button>
-ابدأ الآن
-</button>
-
-</section>
-
-<section class="cards">
-
-<div class="card">
-
-<h2>
-الخطة البرونزية
-</h2>
-
-<p>
-ربح يومي 5%
-</p>
-
-</div>
-
-<div class="card">
-
-<h2>
-الخطة الفضية
-</h2>
-
-<p>
-ربح يومي 10%
-</p>
-
-</div>
-
-<div class="card">
-
-<h2>
-الخطة الذهبية
-</h2>
-
-<p>
-ربح يومي 15%
-</p>
-
-</div>
-
-</section>
-
-<footer>
-
-© 2025 Invest Pro
-
-</footer>
-
+  // إضافة سجل الاستثمار
+  const today = new Date().toLocaleString();
+  const row = `<tr>
+    <td>${today}</td>
+    <td>${level}</td>
+    <td>${level}</td>
+    <td>${dailyProfit}</td>
+  </tr>`;
+  document.getElementById('historyBody').innerHTML += row;
+}
+</script>
 </body>
-
 </html>
